@@ -13,6 +13,9 @@ public class InputView {
                 System.out.println("경주할 자동차 이름을 입력하세요. (이름은 쉼표(,) 기준으로 구분)");
                 String carNames = Console.readLine();
                 String[] carName = carNames.split(","); // 하나씩 배열에 넣기
+                for(int i=0; i<carName.length; i++){
+                    carName[i] = carName[i].trim(); // 공백 제거
+                }
                 validateCarName(carName);   // 5자 이내인지 검증
 
                 return carName;
